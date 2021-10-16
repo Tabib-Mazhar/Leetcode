@@ -1,0 +1,17 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        
+        buy=float('inf')
+        profit=0
+        
+        for price in prices:
+            buy = min(buy, price)
+            differene = price-buy
+            profit= max(profit, differene)
+        return profit   
+            
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        
