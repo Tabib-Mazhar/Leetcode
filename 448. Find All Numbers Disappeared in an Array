@@ -1,0 +1,18 @@
+class Solution(object):
+    def findDisappearedNumbers(self, nums):
+        
+        numbers_set = set(range(1,  len(nums) + 1))
+        nums = set(nums)
+        missing=[]
+
+        for i in nums:
+            if i in numbers_set:
+                numbers_set.remove(i)
+
+        return list(numbers_set)
+
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        
