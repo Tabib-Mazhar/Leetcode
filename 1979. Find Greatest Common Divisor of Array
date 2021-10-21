@@ -1,0 +1,31 @@
+class Solution(object):
+    def findGCD(self, nums):
+   
+   """
+    My solution
+    """
+        
+        nums_set= set(nums)
+        
+        if(len(nums_set) ==1):
+            return (nums[0])
+
+        max_value = max(nums_set)
+        min_value = min(nums_set)
+        
+        if(max_value % min_value ==0 ):
+                return (min_value)
+
+        for i in range(min_value,1, -1):
+            if (max_value % i ==0 and min_value % i ==0 ):
+                return (i)
+                
+        return 1
+        
+        """
+       easiest solution for python 3
+       
+       return gcd(min(nums), max(nums))
+
+        """
+        
